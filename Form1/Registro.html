@@ -1,0 +1,88 @@
+
+<?php
+     $servidor="localhost";
+     $usuario="root";
+     $clave="";
+     $baseDatos="form-box";
+
+     ?>
+     
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Registro</title>
+    <link rel="stylesheet" href="Style2.css">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="Acceder()">Iniciar</button>
+                <button type="button" class="toggle-btn" onclick="Registrarse()">Registro</button>
+            </div>
+            <div class="social">
+                    <img src="fb.png">
+                    <img src="tw.png">
+                    <img src="gg.png">
+                </div>
+                <form id="Acceder" class="input-group">
+                        <input type="text" class="input-field" placeholder="Usuario" required>
+                        <input type="text" class="input-field" placeholder="Ingrese Contraseña" required>
+                        <input type="checkbox" class="check-box"><span>Recordar Contraseña</span>
+                        <button type="submit" class="sumbit-btn">Acceder</button>
+                 </form>
+                 <form id="Registrarse" class="input-group">
+                        <input type="text" class="input-field" placeholder="Usuario" required>
+                        <input type="email" class="input-field" placeholder="Ingrese su E-mail" required>
+                        <input type="text" class="input-field" placeholder="Ingrese su Contraseña" required>
+                        <input type="checkbox" class="check-box"><span>Acepto Terminos y Condiciones</span>
+                        <button type="submit" class="sumbit-btn">Registrarse</button>
+                 </form>
+            </div>
+            
+        </div>
+        <script>
+        var x  = document.getElementById("Acceder");
+        var y  = document.getElementById("Registrarse");
+        var z  = document.getElementById("btn");
+
+        function Registrarse(){
+            x.style.left = "400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+
+        }
+        function Acceder(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+
+        }
+        </script>
+    </body>
+</html>
+<? php
+
+if(isset($_POST['Registrarse'])){
+    
+    $nombre =$_POST["id"];
+    $nombre =$_POST["Usuario"];
+    $nombre =$_POST["Ingrese su E-mail"];
+    $nombre =$_POST["Ingrese su Contraseña"];
+
+    $insertarDatos = "INSERT INTO datos VALUES('$Usuario', '$Ingrese su E-mail','$Ingrese su Contraseña','$id')";
+
+    $ejecutarInsertar = mysqli_query($enlace, $insrtarDatos);
+    
+    if(!$ejecutarInsertar){
+        echo"error en linea";
+    }
+    
+}
+
+?>
